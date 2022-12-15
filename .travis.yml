@@ -1,0 +1,7 @@
+services:
+  - docker
+
+before_install:
+- docker build -t dhanyashree/springboot:v1
+- docker push dhanyashree/springboot:v1
+- docker ps -a
