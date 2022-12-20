@@ -1,16 +1,23 @@
+library identifier: "pipeline-library@v1.5",
+retriever: modernSCM(
+  [
+    $class: "GitSCMSource",
+    remote: "https://github.com/redhat-cop/pipeline-library.git"
+  ]
+)
+appName = spring-boot-dhanya
 pipeline {
-    agent {
-        all
-    }
+    // Use the 'maven' Jenkins agent image which is provided with OpenShift 
+    agent { label "maven" }
     stages {
-        stage('build') {
+        
+        stage("Docker Build") {
             steps {
-               docker build -t dhanyashree/springboot:v2
-            }
-        stage('push')
-            steps{
-               docker push dhanyashree/springboot:v2
+                // This uploads your application's source code and performs a binary build in OpenShift
+                // This is a step defined in the shared library (see the top for the URL)
+                // (Or you could invoke this step using 'oc' commands!)
+                binaryBuild(buildConfigName: appName, buildFromPath: ".")
             }
         }
-    }
-}
+     }
+   }
