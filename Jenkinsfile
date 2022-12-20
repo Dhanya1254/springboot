@@ -5,7 +5,7 @@ retriever: modernSCM(
     remote: "https://github.com/redhat-cop/pipeline-library.git"
   ]
 )
-appName = spring-boot-dhanya
+appName = dhanyabuild
 pipeline {
     // Use the 'maven' Jenkins agent image which is provided with OpenShift 
     agent { label "maven" }
