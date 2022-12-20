@@ -10,7 +10,11 @@ pipeline {
     // Use the 'maven' Jenkins agent image which is provided with OpenShift 
     agent { label "maven" }
     stages {
-        
+         stage("Checkout") {
+            steps {
+                checkout scm
+            }
+        }
         stage("Docker Build") {
             steps {
                 // This uploads your application's source code and performs a binary build in OpenShift
