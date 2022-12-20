@@ -8,7 +8,7 @@ retriever: modernSCM(
 appName = dhanyabuild
 pipeline {
     // Use the 'maven' Jenkins agent image which is provided with OpenShift 
-    agent { any }
+    agent  any 
     stages {
          stage("Checkout") {
             steps {
