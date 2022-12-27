@@ -5,7 +5,7 @@ retriever: modernSCM(
     remote: "https://github.com/redhat-cop/pipeline-library.git"
   ]
 )
-def build_number
+
 appName = "dhanyabuild"
 pipeline {
     // Use the 'maven' Jenkins agent image which is provided with OpenShift 
