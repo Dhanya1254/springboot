@@ -29,15 +29,18 @@ pipeline {
 }
      }
       
-     
-      
+      stage("Trigger ManifestUpdate"){
+        steps{
+          build job:'updatemanifest' , parameters: [string(name: 'DOCKERTAG' ,value: env.build_number)]
+            }
+     }
         stage("Docker Build") {
             steps {
                 // This uploads your application's source code and performs a binary build in OpenShift
                 // This is a step defined in the shared library (see the top for the URL)
                 // (Or you could invoke this step using 'oc' commands!)
                 binaryBuild(buildConfigName: appName, buildFromPath: ".")
-              buildandtag(imageName: appName, imageNamespace: "dhanya-jenkins", imageVersion: "${env.build_number}", registryFQDN: "dhanyashree/springboot") 
+              buildandtag(imageName: appName, imageNamespace: "dhanya-jenkins", imageVersion: "${env.build_number}", registryFQDN: "https://hub.docker.com/repository/docker/dhanyashree/springboot") 
             }
         }
       }
