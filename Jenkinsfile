@@ -24,7 +24,7 @@ pipeline {
             sourceImageTag : "latest",
             toImagePath: "dhanya-jenkins",
             toImageName    : "springboot",
-      toImageTag     : "${env.build_number}"
+            toImageTag     : "${env.build_number}"
     ])
 }
      }
