@@ -37,7 +37,7 @@ pipeline {
                 // This is a step defined in the shared library (see the top for the URL)
                 // (Or you could invoke this step using 'oc' commands!)
                 binaryBuild(buildConfigName: appName, buildFromPath: ".")
-              buildandtag(imageName: appName, imageNamespace: "dhanya-jenkins", imageVersion: "${env.build_number}", registryFQDN: "springboot") 
+              buildandtag(imageName: appName, imageNamespace: "dhanya-jenkins", imageVersion: "${env.build_number}", registryFQDN: "dhanyashree/springboot") 
             }
         }
       }
