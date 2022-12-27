@@ -23,5 +23,5 @@ pipeline {
                 binaryBuild(buildConfigName: appName, buildFromPath: ".")
             }
         }
-     }
+      }
    }
