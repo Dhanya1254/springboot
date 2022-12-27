@@ -17,7 +17,7 @@ spec:
         app: springboot
     spec:
       containers:
-        - name: java-sre-monitor
+        - name: springboot-monitor
           image: 'docker.io/dhanyashree/springboot:b3'
           imagePullPolicy: Always
           ports:
