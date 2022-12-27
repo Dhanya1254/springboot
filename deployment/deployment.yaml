@@ -24,6 +24,9 @@ spec:
             - containerPort: 3000
               protocol: TCP
          
+  strategy:
+    type: RollingUpdate
+   
 ---
 kind: Service
 apiVersion: v1
@@ -45,6 +48,7 @@ metadata:
 spec:
   to:
     kind: Service
-    name:springboot-svc-monitoring
+    name: springboot-svc-monitoring
+    weight: 100
   port:
     targetPort: 9080-metrics
