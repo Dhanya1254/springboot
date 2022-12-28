@@ -29,11 +29,11 @@ pipeline {
       stage("TEST: Can tag image") {
        steps{
     tagImage([
-            sourceImagePath: "dhanya-jenkins",
-            sourceImageName: "springboot",
+            sourceImagePath: "docker.io",
+            sourceImageName: "dhanyashree/springboot",
             sourceImageTag : "latest",
             toImagePath: "dhanya-jenkins",
-            toImageName    : "springboot",
+            toImageName    : "dhanyashree/springboot",
             toImageTag     : "${env.BUILD_NUMBER}"
     ])
 }
