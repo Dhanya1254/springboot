@@ -5,7 +5,7 @@ retriever: modernSCM(
     remote: "https://github.com/redhat-cop/pipeline-library.git"
   ]
 )
-def BUILD_NUMBER
+
 appName = "dhanyabuild"
 pipeline {
     // Use the 'maven' Jenkins agent image which is provided with OpenShift 
@@ -29,11 +29,11 @@ pipeline {
       stage("TEST: Can tag image") {
        steps{
     tagImage([
-            sourceImagePath: "docker.io",
-            sourceImageName: "dhanyashree/springboot",
+            sourceImagePath: "dhanya-jenkins",
+            sourceImageName: "springboot",
             sourceImageTag : "latest",
             toImagePath: "dhanya-jenkins",
-            toImageName    : "dhanyashree/springboot",
+            toImageName    : "springboot",
             toImageTag     : "${env.BUILD_NUMBER}"
     ])
 }
