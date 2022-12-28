@@ -26,7 +26,7 @@ pipeline {
               
             }
         }
-   /*   stage("TEST: Can tag image") {
+      stage("TEST: Can tag image") {
        steps{
     tagImage([
             sourceImagePath: "dhanya-jenkins",
@@ -37,7 +37,7 @@ pipeline {
             toImageTag     : "${env.BUILD_NUMBER}"
     ])
 }
-     }*/
+     }
 /* stage("Trigger Deployment Update Pipeline"){
         steps{
           build job:'updatefile' , parameters: [string(name: 'DOCKERTAG',value: env.BUILD_NUMBER)]
