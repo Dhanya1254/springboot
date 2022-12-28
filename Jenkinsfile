@@ -26,5 +26,19 @@ pipeline {
               
             }
         }
+      stage("TEST: Can tag image") {
+       steps{
+    tagImage([
+            sourceImagePath: "dhanya-jenkins",
+            sourceImageName: "springboot",
+            sourceImageTag : "latest",
+            toImagePath: "dhanya-jenkins",
+            toImageName    : "springboot",
+            toImageTag     : "${env.build_number}"
+    ])
+}
+     }
+
+ 
       }
    }
