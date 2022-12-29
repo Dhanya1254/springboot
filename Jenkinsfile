@@ -38,11 +38,11 @@ pipeline {
     ])
 }
      }
- /*stage("Trigger Deployment Update Pipeline"){
+ stage("Trigger Deployment Update Pipeline"){
         steps{
           build job:'updatefile' , parameters: [string(name: 'DOCKERTAG',value: env.BUILD_NUMBER)]
         }
-      }*/
+      }
  
       }
 }
